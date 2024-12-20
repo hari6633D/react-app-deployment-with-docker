@@ -1,7 +1,8 @@
 #!/bin/bash
 
 #login into DockerHub:
-docker login -u $DOCKER_USERNAME -p $DOCKER_PASS
+echo $DCOKER_PASS | docker login -u $DOCKER_USERNAME --password-stdin
+sudo usermod -aG docker $USER
 
 #stopping existing container:
 docker stop react
