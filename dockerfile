@@ -5,7 +5,7 @@ FROM node:16-alpine as build
 WORKDIR /app
 
 #copying the package.json file to app directory and installing packages:
-COPY package.json .
+COPY package-lock.json .
 RUN npm ci
 
 #copying the rest of application code to the working directory:
